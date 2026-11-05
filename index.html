@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Farm Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">🌻</div>
+        <div><h1>Mini Farm Life</h1><p>Your little patch of happiness</p></div>
+      </div>
+      <div class="top-stats">
+        <div class="stat"><span>🪙</span><b id="coins">100</b><small>Coins</small></div>
+        <div class="stat"><span>⭐</span><b id="level">1</b><small>Level</small></div>
+        <div class="stat"><span>☀️</span><b id="day">1</b><small>Day</small></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="farm-panel panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">YOUR FARM</p><h2>Sunny Acres</h2></div>
+          <div class="weather-pill" id="weather">☀️ Sunny day</div>
+        </div>
+        <div class="level-progress">
+          <div class="progress-label"><span id="xp-label">Level 1 · 0 / 50 XP</span><span id="next-level">Next: Level 2</span></div>
+          <div class="progress-track"><div id="xp-fill"></div></div>
+        </div>
+        <div class="farm-toolbar">
+          <div><span class="tool-label">SELECT ACTION</span><div class="tool-buttons" id="tools">
+            <button class="tool active" data-tool="plant">🌱 Plant</button>
+            <button class="tool" data-tool="water">💧 Water</button>
+            <button class="tool" data-tool="harvest">🧺 Harvest</button>
+            <button class="tool" data-tool="clear">🪓 Clear</button>
+          </div></div>
+          <div class="selected-seed"><span class="tool-label">SEED</span><strong id="selected-seed">🥕 Carrot</strong></div>
+        </div>
+        <div class="farm-grid-wrap">
+          <div class="farm-grid" id="farm-grid" aria-label="Farm plots"></div>
+        </div>
+        <div class="farm-footer"><span id="farm-message">Choose a plot to get started!</span><button class="secondary-btn" id="next-day">🌙 Sleep · Next day</button></div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel seed-panel">
+          <div class="section-heading compact"><div><p class="eyebrow">SEED SHOP</p><h2>What to grow?</h2></div><span class="shop-icon">🛒</span></div>
+          <div id="seed-list" class="seed-list"></div>
+        </section>
+        <section class="panel inventory-panel">
+          <div class="section-heading compact"><div><p class="eyebrow">YOUR HARVEST</p><h2>Inventory</h2></div><span class="shop-icon">📦</span></div>
+          <div id="inventory" class="inventory-list"></div>
+          <button class="primary-btn full" id="sell-all">💰 Sell all harvest</button>
+        </section>
+      </aside>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="farm">🌾 <span>Farm</span></button>
+      <button class="nav-btn" data-page="upgrades">⚙️ <span>Upgrades</span></button>
+      <button class="nav-btn" data-page="quests">📜 <span>Quests</span></button>
+      <button class="nav-btn" data-page="settings">⚙ <span>Settings</span></button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modal">
+    <div class="modal panel">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
